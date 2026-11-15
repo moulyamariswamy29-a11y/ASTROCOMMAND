@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ASTROCOMMAND</title>
+</head>
+<style>
+    body {
+        background: linear-gradient(135deg, #050816, #142850, #301934);
+        color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 50px;
+    }
+
+    h1 {
+        color: #00e5ff;
+        font-size: 45px;
+    }
+
+    p {
+        font-size: 22px;
+        color: #d6e4ff;
+    }
+    button {
+    background: #00e5ff;
+    color: #050816;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 25px;
+}
+
+button:hover {
+    background: white;
+    transform: scale(1.05);
+}
+section {
+    margin: 50px auto;
+    padding: 25px;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid #00e5ff;
+    border-radius: 20px;
+}
+
+section h2 {
+    color: #00e5ff;
+}
+
+progress {
+    width: 70%;
+    height: 18px;
+    accent-color: #00e5ff;
+}
+#missionScore {
+    color: #00e5ff;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#missionStatus {
+    color: #00ff99;
+    font-weight: bold;
+}
+nav {
+    background: rgba(0, 229, 255, 0.12);
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+nav a {
+    color: #00e5ff;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 10px;
+}
+
+nav a:hover {
+    color: white;
+}
+section {
+    background: rgba(15, 30, 65, 0.85);
+    border: 1px solid #00e5ff;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.2);
+}
+
+section h2 {
+    color: #00e5ff;
+    margin-bottom: 15px;
+}
+.safety-alert {
+    background: rgba(255, 80, 50, 0.15);
+    border: 2px solid orange;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.safety-alert h3 {
+    color: orange;
+}
+</style>
+<body>
+
+    <h1>Welcome to ASTROCOMMAND 🚀</h1>
+    <nav>
+    <a href="#top">Home</a> |
+    <a href="#dashboard">Resources</a> |
+    <a href="#results">Results</a>
+</nav>
+    <p>Junior Astronaut Mission Trainer</p>
+    <p>🌍 Explore space. Manage resources. Complete your mission!</p>
+    <br>
+<div>
+    <h2>Choose Your Mission</h2>
+    <p>📍 Current Mission Location:</p>
+<p id="missionLocation">Not Selected</p>
+<p>🎯 Select your mission difficulty:</p>
+
+<button onclick="alert('Easy Mode Selected!')">
+    🟢 EASY
+</button>
+
+<button onclick="alert('Medium Mode Selected!')">
+    🟡 MEDIUM
+</button>
+
+<button onclick="alert('Hard Mode Selected!')">
+    🔴 HARD
+</button>
+<button onclick="document.getElementById('missionLocation').innerText = 'Moon 🌙'; alert('Moon Mission Selected!')"></button>
+        🌙 MOON MISSION
+    </button>
+<button onclick="document.getElementById('missionLocation').innerText = 'Mars 🔴'; alert('Mars Mission Selected!')"></button>
+    
+        🔴 MARS MISSION
+    </button>
+</div>
+<section>
+    <h2 id="dashboard">🛰️ Mission Resource Dashboard</h2>
+
+    <p id="resourceWarning" style="color: orange; font-weight: bold;">
+        ⚠️ Monitor your resources carefully!
+    </p>
+
+    <h3>🫁 Oxygen</h3>
+    <progress id="oxygenBar" value="90" max="100"></progress>
+    <span id="oxygenText">90%</span>
+
+    <h3>💧 Water</h3>
+    <progress id="waterBar" value="80" max="100"></progress>
+    <span id="waterText">80%</span>
+
+    <h3>🍎 Food</h3>
+    <progress id="foodBar" value="75" max="100"></progress>
+    <span id="foodText">75%</span>
+
+    <h3>⚡ Power</h3>
+    <progress id="powerBar" value="85" max="100"></progress>
+    <span id="powerText">85%</span>
+</section>
+<section>
+    <h2>🛰️ Mission Control</h2>
+
+    <p>Your mission is ready. Make smart decisions to protect your crew!</p>
+
+    <div style="
+        display: block;
+        background: #44251f;
+        border: 3px solid orange;
+        border-radius: 12px;
+        padding: 20px;
+        margin: 20px 0;
+        color: white;
+    ">
+        <h3 style="color: orange;">⚠️ CREW SAFETY ALERT</h3>
+        <p>Monitor oxygen, water, food and power regularly.</p>
+        <p>Never ignore a critical resource warning!</p>
+    </div>
+
+    <section>
+    <h2>📋 How to Play</h2>
+    <p>1. Choose your Moon or Mars mission.</p>
+    <p>2. Read each mission challenge carefully.</p>
+    <p>3. Select the best decision.</p>
+    <p>4. Monitor your resource levels.</p>
+    <p>5. Complete your mission and check your score!</p>
+</section>
+<section>
+    <h2>🎯 Mission Objectives</h2>
+    <p>1. Manage oxygen carefully.</p>
+    <p>2. Conserve water supplies.</p>
+    <p>3. Manage food resources.</p>
+    <p>4. Maintain enough power.</p>
+    <p>5. Complete all mission challenges!</p>
+</section>
+<section>
+    <h2>🌌 Space Facts</h2>
+    <p>🌙 The Moon has weaker gravity than Earth.</p>
+    <p>🔴 Mars is known as the Red Planet.</p>
+    <p>☀️ Solar panels can generate electricity from sunlight.</p>
+    <p>💧 Water is an important resource for space missions.</p>
+</section>
+    <section>
+    <h2>👨‍🚀 Astronaut Profile</h2>
+    <p>Mission Commander: Junior Astronaut</p>
+    <p>Team: CODENOVA</p>
+    <p>Mission: Space Exploration</p>
+</section>
+    <p>Your mission is ready. Make smart decisions to protect your crew!</p>
+    <p>🌍 Every decision matters! Learn how astronauts manage oxygen, water, food, and energy while exploring space.</p>
+</section>
+<section id="dashboard">
+    <h2>📊 Resource Management</h2>
+
+    <label>Oxygen: <span id="oxygenValue">90</span>%</label>
+    <input type="range" id="oxygen" min="0" max="100" value="90"
+    oninput="document.getElementById('oxygenValue').innerText=this.value">
+
+    <label>Water: <span id="waterValue">80</span>%</label>
+    <input type="range" id="water" min="0" max="100" value="80"
+    oninput="document.getElementById('waterValue').innerText=this.value">
+
+    <label>Food: <span id="foodValue">75</span>%</label>
+    <input type="range" id="food" min="0" max="100" value="75"
+    oninput="document.getElementById('foodValue').innerText=this.value">
+
+    <label>Power: <span id="powerValue">85</span>%</label>
+    <input type="range" id="power" min="0" max="100" value="85"
+    oninput="document.getElementById('powerValue').innerText=this.value">
+</section>
+<h3>⚠️ Mission Challenge 1</h3>
+<p>Your crew needs more drinking water. What will you do?</p>
+
+<button onclick="
+    let water = document.getElementById('water');
+    water.value = Math.max(0, water.value - 10);
+    document.getElementById('waterText').innerText = water.value + '%';
+    alert('Great decision! Water consumption reduced.');
+">
+    💧 Save Water
+</button>
+
+<button onclick="alert('Warning! Water resources are limited.')">
+    Use More Water
+</button>
+<h3>⚡ Mission Challenge 2</h3>
+<p>Your base is running low on power. What will you do?</p>
+
+<button onclick="
+    let power = document.getElementById('power');
+    power.value = Math.max(0, power.value - 10);
+    document.getElementById('powerText').innerText = power.value + '%';
+    alert('Excellent! Energy consumption reduced.');
+">
+    ☀️ Save Energy
+</button>
+
+<button onclick="alert('Warning! Power may run low.')">
+    Use Extra Power
+</button>
+<h3>🫁 Mission Challenge 3</h3>
+<p>Your oxygen supply needs careful management. What will you do?</p>
+
+<button onclick="
+    let oxygen = document.getElementById('oxygen');
+    oxygen.value = Math.min(100, oxygen.value + 10);
+    document.getElementById('oxygenText').innerText = oxygen.value + '%';
+    alert('Oxygen reserve restored in the game!');
+">
+    🫁 Restore Oxygen
+</button>
+<h3>🍎 Mission Challenge 4</h3>
+<p>Your food supplies are limited. How will you manage them?</p>
+
+<button onclick="
+    let food = document.getElementById('food');
+    food.value = Math.max(0, food.value - 10);
+    document.getElementById('foodText').innerText = food.value + '%';
+    alert('Good decision! Food consumption reduced.');
+">
+    🍎 Save Food
+</button>
+<h3>☄️ Unexpected Space Event</h3>
+
+<p>A dust storm is approaching your space station!</p>
+
+<button onclick="
+    let power = document.getElementById('power');
+    power.value = Math.max(0, power.value - 15);
+    document.getElementById('powerText').innerText = power.value + '%';
+    alert('Dust storm! Your power level has decreased by 15%.');
+">
+    🛡️ Protect Space Station
+</button>
+<section>
+    <h2 id="results">🏆 Mission Results</h2>
+    <section>
+    <h2>⏱️ Mission Timer</h2>
+    <p>Time: <span id="timer">300</span> seconds</p>
+    <h3>⭐ Mission Feedback</h3>
+
+<label for="missionFeedback">How was your mission experience?</label>
+
+<select id="missionFeedback">
+    <option value="Excellent">Excellent</option>
+    <option value="Very Good">Very Good</option>
+    <option value="Good">Good</option>
+    <option value="Needs Improvement">Needs Improvement</option>
+</select>
+
+<button onclick="submitFeedback()">
+    Submit Feedback
+</button>
+
+<p id="feedbackMessage"></p>
+<h3>🧑‍🚀 Crew Health Monitor</h3>
+
+<p>❤️ Crew Health: <span id="crewHealth">100%</span></p>
+
+<input type="range" id="healthControl"
+min="0" max="100" value="100"
+oninput="changeCrewHealth(this.value)">
+
+<p id="crewHealthStatus">✅ Crew is healthy!</p>
+
+</section>
+<h3>📋 Mission Event Log</h3>
+<button onclick="downloadMissionReport()" style="
+    background: #008cff;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+">
+    📄 Download Mission Report
+</button>
+
+<div id="eventLog" style="
+    background: #172438;
+    border: 2px solid #00ccff;
+    border-radius: 10px;
+    padding: 15px;
+    color: white;
+">
+    <p>🚀 Mission started successfully!</p>
+    <p>🧑‍🚀 Crew health monitor activated.</p>
+    <p>📡 Resource monitoring active.</p>
+</div>
+<button onclick="clearEventLog()" style="
+    background: #e74c3c;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+">
+    🧹 Clear Event Log
+</button>
+    <p>⭐ Mission Score: <span id="missionScore">0</span>/100</p>
+    <p>🏅 Mission Grade: <span id="missionGrade">Not Graded</span></p>
+    <p>⏱️ Mission Time: <span id="completionTime">Not Completed</span></p>
+    <p id="successMessage" style="color: #00ff99; font-weight: bold;"></p>
+    <p>📡 Mission Status: <span id="missionStatus">Not Completed</span></p>
+    <h3>🧑‍🚀 Crew Health Monitor</h3>
+<p>❤️ Crew Health: <span id="crewHealth">100%</span></p>
+<p id="crewHealthStatus" style="color: #00ff99; font-weight: bold;">
+    <label for="healthControl">Adjust Crew Health:</label>
+
+<input
+    type="range"
+    id="healthControl"
+    min="0"
+    max="100"
+    value="100"
+    oninput="changeCrewHealth(this.value)"
+>
+
+<span id="healthValue">100%</span>
+<div id="healthAdvice" style="
+    background: #20352c;
+    border: 2px solid #00ff99;
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 10px;
+    color: white;
+">
+    🛡️ Maintain safe living conditions to protect your crew!
+</div>
+    ✅ Crew is healthy!
+</p>
+
+    <p id="resultMessage">Complete your mission challenges to see your results!</p>
+    <button onclick="
+    let oxygen = Number(document.getElementById('oxygen').value);
+    let water = Number(document.getElementById('water').value);
+    let food = Number(document.getElementById('food').value);
+    let power = Number(document.getElementById('power').value);
+
+    let score = Math.round((oxygen + water + food + power) / 4);
+
+    document.getElementById('missionScore').innerText = score;
+    let missionLog = document.getElementById('eventLog');
+
+if (missionLog) {
+    let newEvent = document.createElement('p');
+    newEvent.innerText = '🏆 Mission completed! Results generated.';
+    missionLog.appendChild(newEvent);
+}
+    let grade = '';
+
+if (score >= 90) {
+    grade = 'A - Excellent';
+} else if (score >= 80) {
+    grade = 'B - Very Good';
+} else if (score >= 70) {
+    grade = 'C - Good';
+} else {
+    grade = 'D - Needs Improvement';
+}
+
+document.getElementById('missionGrade').innerText = grade;
+    document.getElementById('completionTime').innerText =
+    'Mission completed!';
+    document.getElementById('missionStatus').innerText =
+    score >= 70 ? 'Successful 🚀' : 'Needs Improvement ⚠️';
+    document.getElementById('successMessage').innerText =
+    score >= 70
+    ? '🎉 Congratulations! Your mission was successful!'
+    : 'Keep trying! Improve your resources and try again.';
+
+    document.getElementById('resultMessage').innerText =
+    'Mission completed! 🚀 Oxygen: ' + oxygen +
+    '%, Water: ' + water +
+    '%, Food: ' + food +
+    '%, Power: ' + power + '%';
+">
+    🏆 Complete Mission
+</button>
+</section>
+<button onclick="location.reload()">
+    🔄 Restart Mission
+</button>
+<script>
+    let timeLeft = 300;
+
+    let missionTimer = setInterval(function() {
+        if (timeLeft > 0) {
+            timeLeft--;
+            document.getElementById("timer").innerText = timeLeft;
+        } else {
+            clearInterval(missionTimer);
+            alert("Mission time is over!");
+        }
+    }, 1000);
+</script>
+<section>
+    <h2>🚀 Explore with NASA</h2>
+    <p>Learn how NASA is preparing for future Moon and Mars missions.</p>
+    <a href="https://www3.nasa.gov/specials/moontomars/"
+       target="_blank">
+       Explore NASA Moon to Mars
+    </a>
+    <p><small>Source: NASA</small></p>
+</section>
+<script>
+function checkResources() {
+    let resources = ["oxygen", "water", "food", "power"];
+    let lowResources = [];
+
+    // Update dashboard values
+    document.getElementById("oxygenBar").value =
+        document.getElementById("oxygen").value;
+    document.getElementById("oxygenText").innerText =
+        document.getElementById("oxygen").value + "%";
+
+    document.getElementById("waterBar").value =
+        document.getElementById("water").value;
+    document.getElementById("waterText").innerText =
+        document.getElementById("water").value + "%";
+
+    document.getElementById("foodBar").value =
+        document.getElementById("food").value;
+    document.getElementById("foodText").innerText =
+        document.getElementById("food").value + "%";
+
+    document.getElementById("powerBar").value =
+        document.getElementById("power").value;
+    document.getElementById("powerText").innerText =
+        document.getElementById("power").value + "%";
+
+    // Check low resources
+    resources.forEach(function(id) {
+        let item = document.getElementById(id);
+
+        if (item && Number(item.value) < 30) {
+            lowResources.push(id);
+        }
+    });
+
+    let warning = document.getElementById("resourceWarning");
+
+    if (lowResources.length > 0) {
+        warning.innerText = "⚠️ Low Resources: " + lowResources.join(", ");
+    } else {
+        warning.innerText = "✅ All resources are at safe levels!";
+    }
+}
+
+["oxygen", "water", "food", "power"].forEach(function(id) {
+    let item = document.getElementById(id);
+    if (item) {
+        item.addEventListener("input", checkResources);
+    }
+});
+
+checkResources();
+
+updateCrewHealth();
+function changeCrewHealth(value) {
+    document.getElementById("crewHealth").innerText = value + "%";
+    document.getElementById("healthValue").innerText = value + "%";
+
+    updateCrewHealth();
+    let eventLog = document.getElementById("eventLog");
+
+if (eventLog) {
+    let newEvent = document.createElement("p");
+    newEvent.innerText = "🧑‍🚀 Crew health updated to " + value + "%";
+    eventLog.appendChild(newEvent);
+}
+}
+function updateCrewHealth() {
+    let health = Number(
+        document.getElementById("crewHealth").innerText.replace("%", "")
+    );
+
+    let status = document.getElementById("crewHealthStatus");
+    let advice = document.getElementById("healthAdvice");
+
+    if (health >= 70) {
+        status.innerText = "✅ Crew is healthy!";
+        status.style.color = "#00ff99";
+        advice.innerText = "🛡️ Excellent! Continue monitoring crew health.";
+    } else if (health >= 30) {
+        status.innerText = "⚠️ Crew health needs attention!";
+        status.style.color = "orange";
+        advice.innerText = "⚠️ Check life support and improve crew conditions.";
+    } else {
+        status.innerText = "🚨 Critical crew health!";
+        status.style.color = "red";
+        advice.innerText = "🚨 Emergency! Restore safe crew conditions.";
+    }
+}
+function clearEventLog() {
+    document.getElementById("eventLog").innerHTML =
+        "<p>📋 Event log cleared.</p>";
+}
+function downloadMissionReport() {
+    let report = `
+ASTROCOMMAND - MISSION REPORT
+
+Mission Score: ${document.getElementById("missionScore").innerText}/100
+Mission Status: ${document.getElementById("missionStatus").innerText}
+Mission Grade: ${document.getElementById("missionGrade").innerText}
+
+Crew Health: ${document.getElementById("crewHealth").innerText}
+
+Oxygen: ${document.getElementById("oxygen").value}%
+Water: ${document.getElementById("water").value}%
+Food: ${document.getElementById("food").value}%
+Power: ${document.getElementById("power").value}%
+`;
+
+    let file = new Blob([report], { type: "text/plain" });
+    let link = document.createElement("a");
+
+    link.href = URL.createObjectURL(file);
+    link.download = "ASTROCOMMAND_Mission_Report.txt";
+    link.click();
+
+    URL.revokeObjectURL(link.href);
+}
+function submitFeedback() {
+    let feedback = document.getElementById("missionFeedback").value;
+
+    document.getElementById("feedbackMessage").innerText =
+        "✅ Thank you! Your feedback: " + feedback;
+
+    let eventLog = document.getElementById("eventLog");
+
+    if (eventLog) {
+        let newEvent = document.createElement("p");
+        newEvent.innerText = "⭐ Player feedback submitted: " + feedback;
+        eventLog.appendChild(newEvent);
+    }
+}
+function changeCrewHealth(value) {
+    document.getElementById("crewHealth").innerText = value + "%";
+
+    let status = document.getElementById("crewHealthStatus");
+
+    if (value >= 70) {
+        status.innerText = "✅ Crew is healthy!";
+        status.style.color = "#00ff99";
+    } else if (value >= 30) {
+        status.innerText = "⚠️ Crew health needs attention!";
+        status.style.color = "orange";
+    } else {
+        status.innerText = "🚨 Critical crew health!";
+        status.style.color = "red";
+    }
+}
+</script>
+<footer style="
+    background: #172438;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+">
+    <h2>🚀 ASTROCOMMAND</h2>
+    <p>Developed by Team CODENOVA</p>
+    <p>Space Exploration | Lunar & Mars Mission</p>
+    <p>© 2026 CODENOVA</p>
+</footer>
+</body>
+
+</html>
